@@ -56,24 +56,24 @@ class KajooHelper
 			'index.php?option=com_kajoo&view=upload',
 			$vName == 'upload'
 		);
-		JHtmlSidebar::addEntry(
-			'<i class="icon-arrow-down"></i> '.JText::_('COM_KAJOO_TITLE_REPORTS').'</span>',
-			'index.php?option=com_kajoo&view=reports',
-			$vName == 'reports'
-		);
+		//JHtmlSidebar::addEntry(
+		//	'<i class="icon-arrow-down"></i> '.JText::_('COM_KAJOO_TITLE_REPORTS').'</span>',
+		//	'index.php?option=com_kajoo&view=reports',
+		//	$vName == 'reports'
+		//);
 		
-		$valid = self::isValid();
-		if($valid[0]):
-			$icon = 'icon-ok';
-		else:
-			$icon = 'icon-ban-circle';
-		endif;
+		//$valid = self::isValid();
+		//if($valid[0]):
+		//	$icon = 'icon-ok';
+		//else:
+		//	$icon = 'icon-ban-circle';
+		//endif;
 		
-		JHtmlSidebar::addEntry(
-			'<i class="'.$icon.'"></i> '.JText::_('COM_KAJOO_TITLE_VALIDATE').'</span>',
-			'index.php?option=com_kajoo&view=validation',
-			$vName == 'validation'
-		);
+		//JHtmlSidebar::addEntry(
+		//	'<i class="'.$icon.'"></i> '.JText::_('COM_KAJOO_TITLE_VALIDATE').'</span>',
+		//	'index.php?option=com_kajoo&view=validation',
+		//	$vName == 'validation'
+		//);
 
 	}
 
