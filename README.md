@@ -10,10 +10,10 @@ Manager, as with any other Joomla extension.
 
 ### Prerequisites
 
--Joomla 3.x
--MySQL 5.x
--PHP 5.x / 7.x
--Any web server with PHP support 
+* Joomla 3.x
+* MySQL 5.x
+* PHP 5.x / 7.x
+* Any web server with PHP support 
 
 ```
 The current build has been succesfully tested on Joomla 3.8.6 / PHP 7.1.16 / MySQL 5.6.39.
