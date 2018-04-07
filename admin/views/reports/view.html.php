@@ -27,10 +27,10 @@ class KajooViewReports extends JViewLegacy
 	public function display($tpl = null)
 	{
 		//Check License
-		$valid = KajooHelper::isValid();
-		$error = JText::_('REDLICENSEERRORFEATURE');
-		if($valid[0]==0)
-		KajooHelper::rediretLicense($error);
+		//$valid = KajooHelper::isValid();
+		//$error = JText::_('REDLICENSEERRORFEATURE');
+		//if($valid[0]==0)
+		//KajooHelper::rediretLicense($error);
 		 
 			
 		

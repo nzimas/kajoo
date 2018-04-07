@@ -28,10 +28,10 @@ class KajooViewFields extends JViewLegacy
 	{
 	
 		//Check License
-		$valid = KajooHelper::isValid();
-		$error = JText::_('REDLICENSEERRORFEATURE');
-		if($valid[0]==0)
-		KajooHelper::rediretLicense($error);
+		//$valid = KajooHelper::isValid();
+		//$error = JText::_('REDLICENSEERRORFEATURE');
+		//if($valid[0]==0)
+		//KajooHelper::rediretLicense($error);
 		
 	
 		$this->state		= $this->get('State');

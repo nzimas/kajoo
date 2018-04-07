@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="component" version="3.0" method="upgrade">
     <name>com_kajoo</name>
-    <creationDate>2012-10-02</creationDate>
-    <copyright>Copyright (C) 2012. All rights reserved.</copyright>
+    <creationDate>2018-04</creationDate>
+    <copyright>Copyright (C) 2012-2018. All rights reserved.</copyright>
     <license>GNU GPL v3 or later</license>
-    <author>Miguel Puig</author>
-    <authorEmail>miguel@freebandtech.com</authorEmail>
-    <authorUrl>http://freebandtech.com</authorUrl>
-    <version>2.0</version>
+    <author>Miguel Puig, Nuno Zimas</author>
+    <authorEmail>nzimas@gmail.com</authorEmail>
+    <authorUrl></authorUrl>
+    <version>2.0.1</version>
     <description><![CDATA[<div style="text-align:left;"><img src="components/com_kajoo/assets/images/mainlogo.png">
 <p><strong>Kajoo</strong> offers flexible interfaces to handle media assets stored on a Kaltura powered streaming server.</p>
 <p>Its primary focus lies in the content distribution industry. As such, it largely extends Kaltura's metadata tools in order to address very specific needs professionals in this industry are faced with. The whole sales cycle is covered, from gathering information about existing or prospected customers to rights management.</p>
