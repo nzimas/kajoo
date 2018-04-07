@@ -14,9 +14,10 @@ Manager, as with any other Joomla extension.
 * MySQL 5.x
 * PHP 5.x / 7.x
 * Any web server with PHP support 
+* Kaltura CE or Enterprise
 
 ```
-The current build has been succesfully tested on Joomla 3.8.6 / PHP 7.1.16 / MySQL 5.6.39.
+The current build has been succesfully tested on Joomla 3.8.6 / PHP 7.1.16 / MySQL 5.6.39 / Kaltura CE 13.6.x..
 ```
 
 ## Authors
