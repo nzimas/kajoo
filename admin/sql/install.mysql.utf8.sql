@@ -1,5 +1,5 @@
 --
--- Estructura de tabla para la tabla `#__kajoo_clients`
+--  `#__kajoo_clients` table structure
 --
 
 CREATE TABLE IF NOT EXISTS `#__kajoo_clients` (
@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS `#__kajoo_clients` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `#__kajoo_config`
+-- `#__kajoo_config` table structure
 --
 
 CREATE TABLE IF NOT EXISTS `#__kajoo_config` (
@@ -34,7 +34,7 @@ INSERT INTO `#__kajoo_config` (`id`, `name`, `value`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `#__kajoo_content`
+-- `#__kajoo_content` table structure
 --
 
 CREATE TABLE IF NOT EXISTS `#__kajoo_content` (
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `#__kajoo_content` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `#__kajoo_content_client_rel`
+-- `#__kajoo_content_client_rel` table structure
 --
 
 CREATE TABLE IF NOT EXISTS `#__kajoo_content_client_rel` (
@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS `#__kajoo_content_client_rel` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `#__kajoo_fields`
+-- `#__kajoo_fields` tabled structure
 --
 
 CREATE TABLE IF NOT EXISTS `#__kajoo_fields` (
@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `#__kajoo_fields` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `#__kajoo_field_values`
+-- `#__kajoo_field_values` table structure
 --
 
 CREATE TABLE IF NOT EXISTS `#__kajoo_field_values` (
@@ -110,7 +110,7 @@ CREATE TABLE IF NOT EXISTS `#__kajoo_field_values` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `#__kajoo_field_values_entry`
+-- `#__kajoo_field_values_entry` table structure
 --
 
 CREATE TABLE IF NOT EXISTS `#__kajoo_field_values_entry` (
@@ -124,7 +124,7 @@ CREATE TABLE IF NOT EXISTS `#__kajoo_field_values_entry` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `#__kajoo_notes`
+-- `#__kajoo_notes` table structure
 --
 
 CREATE TABLE IF NOT EXISTS `#__kajoo_notes` (
@@ -141,7 +141,7 @@ CREATE TABLE IF NOT EXISTS `#__kajoo_notes` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `#__kajoo_notes_entries`
+-- `#__kajoo_notes_entries` table structure
 --
 
 CREATE TABLE IF NOT EXISTS `#__kajoo_notes_entries` (
@@ -155,7 +155,7 @@ CREATE TABLE IF NOT EXISTS `#__kajoo_notes_entries` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `#__kajoo_partners`
+-- tabla `#__kajoo_partners` table structure
 --
 
 CREATE TABLE IF NOT EXISTS `#__kajoo_partners` (
