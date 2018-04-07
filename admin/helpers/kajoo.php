@@ -511,18 +511,23 @@ $video = '<script type="text/javascript" src="http://html5.kaltura.org/js"></scr
 	  xmlns:dc="http://purl.org/dc/terms/" 
 	  xmlns:media="http://search.yahoo.com/searchmonkey/media/" 
 	  rel="media:video" 
-	  resource="'.$PartnerInfo->url.'/kwidget/wid/_'.$PartnerInfo->partnerid.'/uiconf_id/'.$uiConf->id.'/entry_id/'.$entry_id.'">
+	  
+resource="'.$PartnerInfo->url.'/kwidget/wid/_'.$PartnerInfo->partnerid.'/uiconf_id/'.$uiConf->id.'/entry_id/'.$entry_id.'">
 	  <param name="allowFullScreen" value="true" />
 	  <param name="allowNetworking" value="all" />
 	  <param name="allowScriptAccess" value="always" />
 	  <param name="bgcolor" value="#000000" />
 	  <param name="flashVars" value="" />
-	  <param name="movie" value="'.$PartnerInfo->url.'/kwidget/wid/_'.$PartnerInfo->partnerid.'/uiconf_id/'.$uiConf->id.'/entry_id/'.$entry_id.'" />
+	  <param name="movie" 
+value="'.$PartnerInfo->url.'/kwidget/wid/_'.$PartnerInfo->partnerid.'/uiconf_id/'.$uiConf->id.'/entry_id/'.$entry_id.'" />
 	</object>';
 	
+		//$video = '<script 
+//src="'.$PartnerInfo->url.'/p/'.$PartnerInfo->partnerid.'/sp/10100/embedIframeJs/uiconf_id/'.$uiConf->id.'/partner_id/'.$PartnerInfo->partnerid.'?autoembed=true&entry_id='.$entry_id.'&playerId=kaltura_player_1523104050&cache_st=1523104050&width=560&height=395&flashvars[streamerType]=auto"></script>';
 
+		//$video = 'FUCK';
 	
-	return $video;
+	return $video=	'';
 		
 	}
 	
