@@ -398,8 +398,8 @@ endif;
 
 
     <div id="thumbVideo<?php echo $this->item->entry_id;?>" style="width:640px;height:320px;"></div>
-    //<script type="text/javascript" src="http://html5.kaltura.org/js"></script>
-    <script>
+    <script type="text/javascript" src="http://html5.kaltura.org/js"></script>
+	<script>
     	mw.setConfig( 'forceMobileHTML5', false );
     		
 	mw.setConfig("Kaltura.ServiceUrl", "<?php echo $urlKaltura;?>" );
