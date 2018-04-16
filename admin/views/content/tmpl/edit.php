@@ -121,7 +121,8 @@ $(function () {
 </script>
 
 
-<form action="<?php echo JRoute::_('index.php?option=com_kajoo&layout=edit&id='.(int) $this->item->id); ?>" method="post" name="adminForm" id="content-form" class="form-validate">
+<form action="<?php echo JRoute::_('index.php?option=com_kajoo&layout=edit&id='.(int) $this->item->id); ?>" method="post" 
+name="adminForm" id="content-form" class="form-validate">
 <?php if(!empty( $this->sidebar)): ?>
 	<div id="j-sidebar-container" class="span2">
 		<?php echo $this->sidebar; ?>
@@ -151,7 +152,8 @@ $(function () {
 			    
 			    	<tr>
 				    	<td class="tdtablecon"><?php echo JText::_('COM_KAJOO_MENUCONTENT_THUMB'); ?></td>
-				    	<td><img class="img-polaroid" id="thumbreview" src="<?php echo $api_result->thumbnailUrl;?>" style="width:90px;" /></td>
+				    	<td><img class="img-polaroid" id="thumbreview" src="<?php echo $api_result->thumbnailUrl;?>" 
+style="width:90px;" /></td>
 			    	</tr>
 			    	
 			    	<tr>
@@ -165,7 +167,8 @@ $(function () {
 			    	
 			    	<tr>
 				    	<td class="tdtablecon"><?php echo JText::_('COM_KAJOO_FORM_LBL_CONTENT_ENTRY_ID'); ?></td>
-				    	<td><?php echo $this->item->entry_id;?> <a href="<?php echo $api_result->downloadUrl;?>">[<?php echo JText::_('COM_KAJOO_FORM_LBL_CONTENT_DOWNLOADSOURCE'); ?>]</a></td>
+				    	<td><?php echo $this->item->entry_id;?> <a href="<?php echo 
+$api_result->downloadUrl;?>">[<?php echo JText::_('COM_KAJOO_FORM_LBL_CONTENT_DOWNLOADSOURCE'); ?>]</a></td>
 			    	</tr>
 			    	<tr>
 				    	<td class="tdtablecon"><?php echo JText::_('COM_KAJOO_CONTENTEDIT_ADDED'); ?></td>
@@ -193,12 +196,14 @@ $(function () {
 
 			    	<tr>
 				    	<td class="tdtablecon"><?php echo JText::_('COM_KAJOO_CONTENTEDIT_VIDEONAME'); ?></td>
-				    	<td><input type="text" id="name" name="name" value="<?php echo $api_result->name;?>" class="input-xxlarge"></td>
+				    	<td><input type="text" id="name" name="name" value="<?php echo $api_result->name;?>" 
+class="input-xxlarge"></td>
 			    	</tr>
 			    	
 			    	<tr>
 				    	<td class="tdtablecon"><?php echo JText::_('COM_KAJOO_CONTENTEDIT_VIDEODESC'); ?></td>
-				    	<td><textarea rows="5" name="description" id="description"><?php echo $api_result->description;?></textarea></td>
+				    	<td><textarea rows="5" name="description" id="description"><?php echo 
+$api_result->description;?></textarea></td>
 			    	</tr>	
 			    			    	
 			    	<tr>
@@ -229,7 +234,8 @@ $(function () {
 				
 				<select multiple="multiple" name="categories[]" style="height:200px;">
 					<?php foreach ($api_result_categories->objects as $category):?>
-						<option value="<?php echo $category->id;?>" <?php if(in_array($category->id, $categoriesArray)) echo "selected";?>><?php echo $category->fullName;?></option>
+						<option value="<?php echo $category->id;?>" <?php if(in_array($category->id, 
+$categoriesArray)) echo "selected";?>><?php echo $category->fullName;?></option>
 					<?php endforeach;?>
 					
 
@@ -253,13 +259,16 @@ $(function () {
 						<td>
 							<?php if($field->type == 1): ?>
 							<select name="<?php echo $field->alias;?>">
-								<option value=""><?php echo JText::_('COM_KAJOO_CONTENTEDIT_SELECTFIELD'); ?></option>
+								<option value=""><?php echo 
+JText::_('COM_KAJOO_CONTENTEDIT_SELECTFIELD'); ?></option>
 								<?php foreach ($field->values as $value):?>								
-									<option value="<?php echo $value->id;?>"<?php if($actualValue==$value->value) echo 'selected="selected"'; ?>><?php echo $value->value;?></option>
+									<option value="<?php echo $value->id;?>"<?php 
+if($actualValue==$value->value) echo 'selected="selected"'; ?>><?php echo $value->value;?></option>
 								<?php endforeach;?>
 							</select>
 							<?php else:?>
-							<input type="text" value="<?php if(isset($actualValue)!='') echo $actualValue; ?>" name="<?php echo $field->alias;?>">
+							<input type="text" value="<?php if(isset($actualValue)!='') echo 
+$actualValue; ?>" name="<?php echo $field->alias;?>">
 							<?php endif;?>
 						</td>
 					</tr>
@@ -289,24 +298,43 @@ $(function () {
 				
 				<?php foreach ($flavors as $key=>$flavor):?>
 
-				    <div class="modal modalflavor" id="modalFlavor<?php echo $key;?>"  data-backdrop="true" data-controls-modal="event-modal" data-keyboard="true">
+				    <div class="modal modalflavor" id="modalFlavor<?php echo $key;?>"  data-backdrop="true" 
+data-controls-modal="event-modal" data-keyboard="true">
 					    <div class="modal-header">
 					    	<h3 id="myModalLabel"><?php echo $flavor->flavorParams->name;?></h3>
 					    </div>
 					    <div class="modal-body">
 					    	<ul class="flavorsinfo">
-					    		<li><span class="labelinfo"><?php echo JText::_('COM_KAJOO_MENUCONTENT_FLAVOR_BITRATE'); ?>: </span><?php if(isset($flavor->flavorAsset->bitrate)){ echo $flavor->flavorAsset->bitrate; } else {echo "-"; }?></li>
-					    		<li><span class="labelinfo"><?php echo JText::_('COM_KAJOO_MENUCONTENT_FLAVOR_FRAMERATE'); ?>: </span><?php if(isset($flavor->flavorAsset->frameRate)){ echo $flavor->flavorAsset->frameRate; } else {echo "-"; }?></li>
-					    		<li><span class="labelinfo"><?php echo JText::_('COM_KAJOO_MENUCONTENT_FLAVOR_TAGS'); ?>: </span><?php if(isset($flavor->flavorAsset->tags)){ echo $flavor->flavorAsset->tags; } else {echo "-"; }?></li>
-					    		<li><span class="labelinfo"><?php echo JText::_('COM_KAJOO_MENUCONTENT_FLAVORCODEC'); ?>: </span><?php if(isset($flavor->flavorParams->videoCodec)){ echo $flavor->flavorParams->videoCodec; } else {echo "-"; }?></li>
-					    		<li><span class="labelinfo"><?php echo JText::_('COM_KAJOO_MENUCONTENT_FLAVORBITRATE'); ?>: </span><?php if(isset($flavor->flavorParams->videoBitrate)){ echo $flavor->flavorParams->videoBitrate; } else {echo "-"; }?></li>
-					    		<li><span class="labelinfo"><?php echo JText::_('COM_KAJOO_MENUCONTENT_FLAVORCODECAUDIO'); ?>: </span><?php if(isset($flavor->flavorParams->audioCodec)){ echo $flavor->flavorParams->audioCodec; } else {echo "-"; }?></li>
-					    		<li><span class="labelinfo"><?php echo JText::_('COM_KAJOO_MENUCONTENT_FLAVORBRATEAUDIO'); ?>: </span><?php if(isset($flavor->flavorParams->audioBitrate)){ echo $flavor->flavorParams->audioBitrate; } else {echo "-"; }?></li>
-					    		<li><span class="labelinfo"><?php echo JText::_('COM_KAJOO_MENUCONTENT_FLAVORFORMAT'); ?>: </span><?php if(isset($flavor->flavorParams->format)){ echo $flavor->flavorParams->format; } else {echo "-"; }?></li>
+					    		<li><span class="labelinfo"><?php echo 
+JText::_('COM_KAJOO_MENUCONTENT_FLAVOR_BITRATE'); ?>: </span><?php if(isset($flavor->flavorAsset->bitrate)){ echo 
+$flavor->flavorAsset->bitrate; } else {echo "-"; }?></li>
+					    		<li><span class="labelinfo"><?php echo 
+JText::_('COM_KAJOO_MENUCONTENT_FLAVOR_FRAMERATE'); ?>: </span><?php if(isset($flavor->flavorAsset->frameRate)){ echo 
+$flavor->flavorAsset->frameRate; } else {echo "-"; }?></li>
+					    		<li><span class="labelinfo"><?php echo 
+JText::_('COM_KAJOO_MENUCONTENT_FLAVOR_TAGS'); ?>: </span><?php if(isset($flavor->flavorAsset->tags)){ echo 
+$flavor->flavorAsset->tags; } else {echo "-"; }?></li>
+					    		<li><span class="labelinfo"><?php echo 
+JText::_('COM_KAJOO_MENUCONTENT_FLAVORCODEC'); ?>: </span><?php if(isset($flavor->flavorParams->videoCodec)){ echo 
+$flavor->flavorParams->videoCodec; } else {echo "-"; }?></li>
+					    		<li><span class="labelinfo"><?php echo 
+JText::_('COM_KAJOO_MENUCONTENT_FLAVORBITRATE'); ?>: </span><?php if(isset($flavor->flavorParams->videoBitrate)){ echo 
+$flavor->flavorParams->videoBitrate; } else {echo "-"; }?></li>
+					    		<li><span class="labelinfo"><?php echo 
+JText::_('COM_KAJOO_MENUCONTENT_FLAVORCODECAUDIO'); ?>: </span><?php if(isset($flavor->flavorParams->audioCodec)){ echo 
+$flavor->flavorParams->audioCodec; } else {echo "-"; }?></li>
+					    		<li><span class="labelinfo"><?php echo 
+JText::_('COM_KAJOO_MENUCONTENT_FLAVORBRATEAUDIO'); ?>: </span><?php if(isset($flavor->flavorParams->audioBitrate)){ echo 
+$flavor->flavorParams->audioBitrate; } else {echo "-"; }?></li>
+					    		<li><span class="labelinfo"><?php echo 
+JText::_('COM_KAJOO_MENUCONTENT_FLAVORFORMAT'); ?>: </span><?php if(isset($flavor->flavorParams->format)){ echo 
+$flavor->flavorParams->format; } else {echo "-"; }?></li>
 					    		<?php if(isset($flavor->flavorAsset->id)): ?>
 								<li>
 								<span class="labelinfo"></span>
-								<a class="btn" href="<?php echo JRoute::_('index.php?option=com_kajoo&controller=content&task=content.downloadFlavor&format=raw&tmpl=component&partnerid='.(int)$this->item->partner_id.'&flavorid='.$flavor->flavorAsset->id); ?>">
+								<a class="btn" href="<?php echo 
+JRoute::_('index.php?option=com_kajoo&controller=content&task=content.downloadFlavor&format=raw&tmpl=component&partnerid='.(int)$this->item->partner_id.'&flavorid='.$flavor->flavorAsset->id); 
+?>">
 									<?php echo JText::_('COM_KAJOO_DOWNLOAD'); ?>
 								</a>
 								</li>
@@ -315,7 +343,8 @@ $(function () {
 					    	
 					    </div>
 					    <div class="modal-footer">
-						    <button class="btn" data-dismiss="modal" aria-hidden="true"><?php echo JText::_('COM_KAJOO_MENUCONTENT_CLOSE'); ?></button>
+						    <button class="btn" data-dismiss="modal" aria-hidden="true"><?php echo 
+JText::_('COM_KAJOO_MENUCONTENT_CLOSE'); ?></button>
 					    </div>
 				    </div>	
 				
@@ -323,23 +352,30 @@ $(function () {
 				   			
 				<tr>
 					<td><?php echo $flavor->flavorParams->name;?></td>
-					<td><?php if(isset($flavor->flavorParams->videoCodec)){ echo $flavor->flavorParams->videoCodec; } else {echo "-"; }?></td>
-					<td><?php if(isset($flavor->flavorAsset->width)){ echo $flavor->flavorAsset->width;} else {echo "-"; }?></td>
-					<td><?php if(isset($flavor->flavorAsset->height)){ echo $flavor->flavorAsset->height; } else {echo "-"; }?></td>
+					<td><?php if(isset($flavor->flavorParams->videoCodec)){ echo 
+$flavor->flavorParams->videoCodec; } else {echo "-"; }?></td>
+					<td><?php if(isset($flavor->flavorAsset->width)){ echo $flavor->flavorAsset->width;} else 
+{echo "-"; }?></td>
+					<td><?php if(isset($flavor->flavorAsset->height)){ echo $flavor->flavorAsset->height; } else 
+{echo "-"; }?></td>
 					<td><?php echo $flavor->flavorParams->description;?></td>
 					<td>
 						
 						<div class="convert_container" id="<?php echo $flavor->flavorAsset->id;?>">
 						    <div class="btn-group">
 						    <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
-						    	<i class="icon-cog icon-white"></i> <?php echo JText::_('COM_KAJOO_MENUCONTENT_FLAVORACTION'); ?>
+						    	<i class="icon-cog icon-white"></i> <?php echo 
+JText::_('COM_KAJOO_MENUCONTENT_FLAVORACTION'); ?>
 						    <span class="caret"></span>
 						    </a>
 						    <ul class="dropdown-menu">
-						    	<li><a href="#modalFlavor<?php echo $key;?>" role="button" data-toggle="modal"><i class="icon-eye-open icon-white"></i> <?php echo JText::_('COM_KAJOO_FLAVORS_VIEWDETAILS'); ?></a></li>
+						    	<li><a href="#modalFlavor<?php echo $key;?>" role="button" 
+data-toggle="modal"><i class="icon-eye-open icon-white"></i> <?php echo JText::_('COM_KAJOO_FLAVORS_VIEWDETAILS'); ?></a></li>
 						    	<?php if($flavor->flavorParams->id!=0):?>
-						    		<li><a href="#" class="deleteflavor" id="<?php echo $flavor->flavorAsset->id;?>"><i class="icon-minus icon-white"></i> <?php echo JText::_('COM_KAJOO_FLAVORS_DELETE'); ?></a></li>
-						    		<li><a href="#" class="reconvertflavor" id="<?php echo $flavor->flavorAsset->id;?>"><i class="icon-refresh icon-white"></i> <?php echo JText::_('COM_KAJOO_FLAVORS_RECONVERT'); ?></a></li>
+						    		<li><a href="#" class="deleteflavor" id="<?php echo 
+$flavor->flavorAsset->id;?>"><i class="icon-minus icon-white"></i> <?php echo JText::_('COM_KAJOO_FLAVORS_DELETE'); ?></a></li>
+						    		<li><a href="#" class="reconvertflavor" id="<?php echo 
+$flavor->flavorAsset->id;?>"><i class="icon-refresh icon-white"></i> <?php echo JText::_('COM_KAJOO_FLAVORS_RECONVERT'); ?></a></li>
 						    	<?php endif;?>
 						    </ul>
 						    </div>
@@ -358,8 +394,10 @@ $(function () {
 					<td>-</td>
 					<td>
 					<div class="convert_container" id="<?php echo $flavor->flavorParams->id;?>">
-						<a href="#" title="<?php echo JText::_('COM_KAJOO_FLAVORS_CONVERT'); ?>" id="<?php echo $flavor->flavorParams->id;?>" role="button" class="btn btn-success convertflavor" data-toggle="modal">
-						<i class="icon-refresh icon-white"></i> <?php echo JText::_('COM_KAJOO_FLAVORS_CONVERT'); ?>
+						<a href="#" title="<?php echo JText::_('COM_KAJOO_FLAVORS_CONVERT'); ?>" id="<?php 
+echo $flavor->flavorParams->id;?>" role="button" class="btn btn-success convertflavor" data-toggle="modal">
+						<i class="icon-refresh icon-white"></i> <?php echo 
+JText::_('COM_KAJOO_FLAVORS_CONVERT'); ?>
 						</a>
 					</div>
 					</td>
@@ -392,13 +430,15 @@ else:
 	$urlKaltura = $PartnerInfo->url;
 	$urlKalturaCDN = $PartnerInfo->url;
 endif;
-	
+    $cdnApiURL = 
+$urlKaltura.'/p/'.$PartnerInfo->partnerid.'/sp/'.$PartnerInfo->partnerid.'00/embedIframeJs/uiconf_id/'.$uiConf->objects[0]->id.'/partner_id/'.$PartnerInfo->partnerid;
 ?>
 
 
 
     <div id="thumbVideo<?php echo $this->item->entry_id;?>" style="width:640px;height:320px;"></div>
-    <script type="text/javascript" src="http://html5.kaltura.org/js"></script>
+    <!--<script type="text/javascript" src="http://html5.kaltura.org/js"></script>-->
+                <script type="text/javascript" src="<?php echo $cdnApiURL;?>"></script>
 	<script>
     	mw.setConfig( 'forceMobileHTML5', false );
     		
@@ -415,7 +455,7 @@ endif;
 	    'host' : '<?php echo $PartnerInfo->url;?>',
 	    'flashvars':{
                         'allowscriptaccess' : 'always',
-                        'autoPlay' : false
+                        'autoPlay' : true
         },
 	    'readyCallback': function( playerId ){
 				//console.log( "kWidget player ready: " + playerId );
@@ -436,7 +476,7 @@ endif;
 		}
 		
 		
-		mw.setConfig( 'KalturaSupport.LeadWithHTML5', false );
+		mw.setConfig( 'KalturaSupport.LeadWithHTML5', true );
 		
     </script>
 
@@ -470,9 +510,12 @@ endif;
 		
 	?>
 		<li class="ui-widget-content ui-corner-tr" id="<?php echo $thumb->id;?>">
-			<img class="collectionthumbs" id="thumb<?php echo $thumb->id;?>" src="<?php echo $thumb_url;?>" style="height:80px;" />
-			<a id="<?php echo $thumb->id;?>" href="#" title="Set as default" class="ui-icon ui-icon-star">Set as default</a>
-			<a id="<?php echo $thumb->id;?>" href="#" title="Delete this image" class="ui-icon ui-icon-trash">Delete image</a>			
+			<img class="collectionthumbs" id="thumb<?php echo $thumb->id;?>" src="<?php echo $thumb_url;?>" 
+style="height:80px;" />
+			<a id="<?php echo $thumb->id;?>" href="#" title="Set as default" class="ui-icon ui-icon-star">Set as 
+default</a>
+			<a id="<?php echo $thumb->id;?>" href="#" title="Delete this image" class="ui-icon ui-icon-trash">Delete 
+image</a>			
 		</li>
 
 		
@@ -532,8 +575,10 @@ endif;
 				<td><?php echo $conf->name;?></td>
 				<td><?php echo $conf->width;?>px</td>
 				<td><?php echo $conf->height;?>px</td>
-				<td><a class="btn change" id="<?php echo $conf->id;?>" href="#"><?php echo JText::_('COM_KAJOO_MENUCONTENT_EMBEDCODECHOOSE'); ?></a></td>
-				<td><a class="btn setDefault btn-success" id="<?php echo $conf->id;?>" href="#"><?php echo JText::_('COM_KAJOO_MENUCONTENT_EMBEDSETDEFPLAYER'); ?></a></td>
+				<td><a class="btn change" id="<?php echo $conf->id;?>" href="#"><?php echo 
+JText::_('COM_KAJOO_MENUCONTENT_EMBEDCODECHOOSE'); ?></a></td>
+				<td><a class="btn setDefault btn-success" id="<?php echo $conf->id;?>" href="#"><?php echo 
+JText::_('COM_KAJOO_MENUCONTENT_EMBEDSETDEFPLAYER'); ?></a></td>
 			</tr>
 			<?php endforeach;?>			
 		</table>
